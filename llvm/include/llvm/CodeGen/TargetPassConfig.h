@@ -105,8 +105,6 @@ private:
 
   bool Started = true;
   bool Stopped = false;
-  bool AddingMachinePasses = false;
-  bool DebugifyIsSafe = true;
 
   /// Set the StartAfter, StartBefore and StopAfter passes to allow running only
   /// a portion of the normal code-gen pass sequence.
@@ -121,6 +119,9 @@ private:
   void setStartStopPasses();
 
 protected:
+  bool AddingMachinePasses = false;
+  bool DebugifyIsSafe = true;
+
   TargetMachine *TM;
   PassConfigImpl *Impl = nullptr; // Internal data structures
   bool Initialized = false; // Flagged after all passes are configured.

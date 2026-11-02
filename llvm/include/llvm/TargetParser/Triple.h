@@ -98,6 +98,7 @@ public:
     xtensa,         // Tensilica: Xtensa
     nvptx,          // NVPTX: 32-bit
     nvptx64,        // NVPTX: 64-bit
+    gass,           // GASS: 64-bit
     amdil,          // AMDIL
     amdil64,        // AMDIL with 64-bit pointers
     hsail,          // AMD HSAIL

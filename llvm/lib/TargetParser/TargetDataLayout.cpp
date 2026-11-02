@@ -468,6 +468,8 @@ static std::string computeVEDataLayout(const Triple &T) {
 
 std::string Triple::computeDataLayout(StringRef ABIName) const {
   switch (getArch()) {
+  case Triple::gass:
+    return "e-p3:32:32-i64:64-i128:128-v16:16-v32:32-n16:32:64";
   case Triple::arm:
   case Triple::armeb:
   case Triple::thumb:

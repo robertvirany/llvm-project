@@ -139,7 +139,7 @@ public:
   }
 };
 
-class LLVM_ABI ELFObjectWriter final : public MCObjectWriter {
+class LLVM_ABI ELFObjectWriter : public MCObjectWriter {
   unsigned ELFHeaderEFlags = 0;
 
 public:

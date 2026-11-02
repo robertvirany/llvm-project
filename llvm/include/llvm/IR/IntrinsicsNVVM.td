@@ -4304,4 +4304,27 @@ class SPDecompress :
 
 def int_nvvm_spdecompress : SPDecompress;
 
+// Original GASS intrinsics.
+def int_nvvm_ldmatrix_m8n8_x4
+  : Intrinsic<!listsplat(llvm_v2f16_ty, 4),
+              [LLVMQualPointerType<3>, llvm_i32_ty],
+              [IntrReadMem, IntrArgMemOnly,
+               NoCapture<ArgIndex<0>>, ReadOnly<ArgIndex<0>>],
+              "llvm.nvvm.ldmatrix.m8n8.x4">;
+
+def int_nvvm_ldmatrix_m8n8_x4_trans
+  : Intrinsic<!listsplat(llvm_v2f16_ty, 4),
+              [LLVMQualPointerType<3>, llvm_i32_ty],
+              [IntrReadMem, IntrArgMemOnly,
+               NoCapture<ArgIndex<0>>, ReadOnly<ArgIndex<0>>],
+              "llvm.nvvm.ldmatrix.m8n8.x4.trans">;
+
+def int_nvvm_tput_bench
+  : Intrinsic<[], [llvm_metadata_ty], [IntrHasSideEffects],
+              "llvm.nvvm.tputbench">;
+
+def int_nvvm_tput_bench_ldgsts
+  : Intrinsic<[], [LLVMQualPointerType<3>, LLVMQualPointerType<1>],
+              [IntrHasSideEffects], "llvm.nvvm.tputbench.ldgsts">;
+
 } // let TargetPrefix = "nvvm"
